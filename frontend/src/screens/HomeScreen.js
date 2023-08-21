@@ -1,23 +1,19 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { Row, Col } from 'react-bootstrap';
 import Product from '../components/Product';
+import Loader from '../components/Loader';
+import Message from '../components/Message';
+import { useGetProductsQuery } from '../slices/productsApiSlice';
 
 function HomeScreen() {
 
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    const fetchProducts = async () => {
-      fetch("http://localhost:5000/api/products").then((response) => response.json()).then((data) => {
-        setProducts(data);
-      })
-    };
-
-    fetchProducts();
-  }, []);
+  const { data: products, isLoading, error } = useGetProductsQuery();
 
   return (
     <>
+      {isLoading ? (
+        <Loader />
+      ) : error ? (<Message variant="danger">{error?.data?.message || error.error}</Message>) : (<>
       <h1>Latest Products</h1>
       <Row>
         {products.map((product) => (
@@ -25,7 +21,9 @@ function HomeScreen() {
             <Product product={product} />
           </Col>
         ))}
-      </Row>
+      </Row></>)}
+
+      
     </>
   )
 }
