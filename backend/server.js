@@ -22,7 +22,7 @@ const app = express();
 
 //Body parser middleware
 app.use(express.json());
-app.use(express.urlencoded({extended: true}));
+app.use(express.urlencoded({ extended: true }));
 
 //Cookie parser middleware
 app.use(cookieParser());
@@ -36,6 +36,8 @@ app.get("/", (req, res) => {
 app.use("/api/products", productRoutes);
 app.use("/api/users", userRoutes);
 app.use("/api/orders", orderRoutes);
+
+app.get("/api/config/paypal", (req, res) => res.send({ clientId: process.env.PAYPAL_CLIENT_ID }));
 
 app.use(notFound);
 app.use(errorHandler);
