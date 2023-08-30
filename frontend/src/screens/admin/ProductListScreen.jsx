@@ -81,8 +81,6 @@ function ProductListScreen() {
                                         <LinkContainer to={`/admin/product/${product._id}/edit`}>
                                             <Button variant="light" className="btn-sm mx-1"><FaEdit /></Button>
                                         </LinkContainer>
-                                    </td>
-                                    <td>
                                         <Button
                                             variant="light"
                                             className="btn-sm"
