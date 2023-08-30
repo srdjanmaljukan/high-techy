@@ -38,7 +38,6 @@ function UserEditScreen() {
 
     const submitHandler = async (e) => {
         e.preventDefault();
-        console.log("submitHandler");
         try {
             await updateUser({userId, name, email, isAdmin});
             toast.success("User updated successfully");
@@ -47,23 +46,6 @@ function UserEditScreen() {
         } catch (error) {
             toast.error(error?.data?.message || error.error)
         }
-
-
-        // const updatedUser = {
-        //   userId,
-        //   name,
-        //   email,
-        //   isAdmin
-        // };
-
-        // const result = await updateUser(updatedUser);
-        // if (result.error) {
-        //   toast.error(result.error);
-        // } else {
-        //   toast.success("Product updated");
-        //   refetch();
-        //   navigate("/admin/productlist");
-        // }
     };
 
     return (
