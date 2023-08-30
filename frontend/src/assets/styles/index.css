@@ -51,3 +51,21 @@ table th {
   bottom: 0;
   background: rgba(0, 0, 0, 0.5);
 }
+
+a.page-link {
+  color: #373b3e !important;
+}
+
+a.page-link:active {
+  background-color: #373b3e;
+}
+
+span.page-link {
+  background-color: #373b3e !important;
+  border-color: #373b3e !important;
+}
+
+.card-img-top {
+  max-height: 100% !important;
+  width: auto;
+}
