@@ -67,6 +67,7 @@ function ProductEditScreen() {
       toast.error(result.error);
     } else {
       toast.success("Product updated");
+      refetch();
       navigate("/admin/productlist");
     }
   };
@@ -126,6 +127,7 @@ function ProductEditScreen() {
                 onChange={(e) => setImage}
               ></Form.Control>
               <Form.Control type="file" label="Choose file" onChange={uploadFileHandler}></Form.Control>
+              {loadingUpload && <Loader />}
             </Form.Group>
             <Form.Group controlId="brand" className="my-2">
               <Form.Label>Brand</Form.Label>
