@@ -7,6 +7,7 @@ import Message from "../components/Message";
 import Paginate from "../components/Paginate";
 import ProductCarousel from "../components/ProductCarousel";
 import { useGetProductsQuery } from "../slices/productsApiSlice";
+import Meta from "../components/Meta";
 
 function HomeScreen() {
   const { pageNumber, keyword } = useParams();
@@ -33,6 +34,7 @@ function HomeScreen() {
         </Message>
       ) : (
         <>
+        <Meta title="Welcome to HighTechy" />
           <h1>Latest Products</h1>
           <Row>
             {data.products.map((product) => (

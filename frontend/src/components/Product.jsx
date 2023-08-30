@@ -12,7 +12,6 @@ function Product({ product }) {
           <Card.Img
             src={window.location.origin + "/" + product.image}
             variant="top"
-            fluid
           />
         </ImageContainer>
       </Link>

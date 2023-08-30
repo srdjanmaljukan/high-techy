@@ -83,11 +83,10 @@ function ProductScreen() {
           <Meta title={product.name} />
           <Row>
             <Col md={5}>
-              <ImageContainer>
+              <ImageContainer height="300px">
                 <Image
                   src={window.location.origin + "/" + product.image}
                   alt={product.name}
-                  fluid
                 />
               </ImageContainer>
             </Col>
