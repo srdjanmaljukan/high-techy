@@ -20,7 +20,7 @@ function ProductListScreen() {
             try {
                 await deleteProduct(id);
                 refetch();
-                toast.success("Product deleted.")
+                toast.success("Product deleted.");
             } catch (error) {
                 toast.error(error?.data?.message || error.error)
             }
