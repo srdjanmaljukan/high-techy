@@ -124,7 +124,7 @@ function ProductEditScreen() {
                 type="text"
                 placeholder="Enter image URL"
                 value={image}
-                onChange={(e) => setImage}
+                onChange={(e) => setImage(e.target.value)}
               ></Form.Control>
               <Form.Control type="file" label="Choose file" onChange={uploadFileHandler}></Form.Control>
               {loadingUpload && <Loader />}
