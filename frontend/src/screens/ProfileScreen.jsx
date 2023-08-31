@@ -120,7 +120,7 @@ function ProfileScreen() {
                                         <FaTimes style={{color: "red"}} />
                                     )}</td>
                                     <td>{order.isDelivered ? (
-                                        order.DeliveredAt.substring(0, 10)
+                                        order.deliveredAt.substring(0, 10)
                                     ) : (
                                         <FaTimes style={{color: "red"}} />
                                     )}</td>
